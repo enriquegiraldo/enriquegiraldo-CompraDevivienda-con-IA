@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía para Legalizar su Inmueble</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-10 shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-purple-800">🏠 Guía Legal</span>
+                </div>
+                <div class="hidden md:flex md:space-x-4">
+                    <button data-target="diagnostico" class="nav-button font-medium text-gray-700">Diagnóstico</button>
+                    <button data-target="proceso" class="nav-button font-medium text-gray-700">Proceso</button>
+                    <button data-target="conceptos" class="nav-button font-medium text-gray-700">Conceptos</button>
+                    <button data-target="herramientas-ia" class="nav-button font-medium text-gray-700">Herramientas IA ✨</button>
+                    <button data-target="plan" class="nav-button font-medium text-gray-700">Plan de Acción</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+
+        <section id="diagnostico" class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-purple-900 mb-4">Legalice su Inmueble en Colombia</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Una guía paso a paso para propiedades sin Escritura Pública ni Certificado de Tradición y Libertad.</p>
+        
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+                    <h3 class="text-xl font-semibold text-red-800 mb-2">❌ Problema: Sin Escritura Pública</h3>
+                    <p class="text-red-700">La escritura es el documento notariado que formaliza la compraventa y lo acredita como dueño. Sin ella, la transferencia de propiedad no es legalmente completa, dejándolo en una situación de vulnerabilidad.</p>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+                    <h3 class="text-xl font-semibold text-red-800 mb-2">❌ Problema: Sin Certificado de Tradición</h3>
+                    <p class="text-red-700">Este documento es el "historial" legal del inmueble. Sin él, es imposible verificar quiénes han sido sus dueños, si tiene embargos, hipotecas u otros problemas legales que afecten su propiedad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proceso" class="section-card">
+            <h2 class="text-3xl font-bold text-center text-purple-900 mb-2">El Proceso de Saneamiento</h2>
+            <p class="text-center text-gray-600 mb-10">Legalizar su propiedad es un proceso que requiere organización y paciencia. Esta sección desglosa las fases clave de la investigación y las acciones legales que debe considerar para asegurar su patrimonio.</p>
+            
+            <div class="lg:flex lg:items-center lg:gap-12">
+                <div class="lg:w-1/2">
+                    <div id="pasos-container" class="space-y-6">
+                        <div class="p-6 border rounded-lg bg-gray-50">
+                            <h4 class="text-xl font-semibold text-purple-800">Paso 1: Recopilación de Pruebas</h4>
+                            <p class="mt-2 text-gray-600">Reúna todos los documentos que tenga, aunque no sean la escritura: promesas de compraventa, recibos de pago de servicios públicos, comprobantes de pago de impuestos, declaraciones de vecinos. Todo esto prueba su posesión.</p>
+                        </div>
+                         <div class="p-6 border rounded-lg bg-gray-50">
+                            <h4 class="text-xl font-semibold text-purple-800">Paso 2: Búsqueda en Registros</h4>
+                            <p class="mt-2 text-gray-600">Visite la Oficina de Registro de Instrumentos Públicos y oficinas de catastro de su municipio. Investigue con el número de matrícula inmobiliaria (si lo conoce) o la dirección para encontrar cualquier rastro del historial del inmueble.</p>
+                        </div>
+                         <div class="p-6 border rounded-lg bg-gray-50">
+                            <h4 class="text-xl font-semibold text-purple-800">Paso 3: Asesoría Legal Profesional</h4>
+                            <p class="mt-2 text-gray-600">Es fundamental. Un abogado especialista en derecho inmobiliario analizará su caso, las pruebas que tiene y le indicará el camino legal más adecuado, que usualmente es un proceso de pertenencia.</p>
+                        </div>
+                         <div class="p-6 border rounded-lg bg-gray-50">
+                            <h4 class="text-xl font-semibold text-purple-800">Paso 4: Proceso Judicial de Pertenencia</h4>
+                            <p class="mt-2 text-gray-600">Si ha sido poseedor del inmueble de forma pública, pacífica e ininterrumpida por el tiempo que exige la ley (5 años para posesión regular, 10 para irregular), puede iniciar un proceso judicial para que un juez lo declare dueño.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 mt-10 lg:mt-0">
+                    <div class="chart-container">
+                        <canvas id="processChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-sm text-gray-500">Visualización de las fases del proceso de legalización.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="conceptos" class="section-card">
+            <h2 class="text-3xl font-bold text-center text-purple-900 mb-2">Conceptos Clave</h2>
+            <p class="text-center text-gray-600 mb-10">Entender estos términos le ayudará a navegar mejor su situación legal. Haga clic en cada concepto para ver su definición.</p>
+            <div id="accordion-container" class="space-y-2 max-w-4xl mx-auto">
+                <div class="border rounded-lg">
+                    <div class="accordion-header p-4 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">Posesión vs. Propiedad</h3>
+                        <span class="text-2xl font-light text-purple-700">+</span>
+                    </div>
+                    <div class="accordion-content px-4 pb-4">
+                        <p class="text-gray-700">La <strong>propiedad</strong> es el derecho legal completo sobre el bien (ser el dueño en papeles). La <strong>posesión</strong> es tener el control físico y actuar como si fuera el dueño (vivir ahí, pagar impuestos, hacer mejoras), aunque legalmente no lo sea. La posesión es el primer paso para volverse propietario.</p>
+                    </div>
+                </div>
+                <div class="border rounded-lg">
+                    <div class="accordion-header p-4 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">Prescripción Adquisitiva de Dominio</h3>
+                         <span class="text-2xl font-light text-purple-700">+</span>
+                    </div>
+                    <div class="accordion-content px-4 pb-4">
+                        <p class="text-gray-700">Es el modo de adquirir la propiedad de un bien por haberlo poseído durante un tiempo determinado por la ley. Es el fundamento del "proceso de pertenencia" que iniciaría con su abogado.</p>
+                    </div>
+                </div>
+                <div class="border rounded-lg">
+                    <div class="accordion-header p-4 flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">Saneamiento de la Titulación</h3>
+                         <span class="text-2xl font-light text-purple-700">+</span>
+                    </div>
+                    <div class="accordion-content px-4 pb-4">
+                        <p class="text-gray-700">Es el término general para todos los procesos y trámites que buscan corregir los defectos legales de un título de propiedad, para que este sea pleno y sin vicios. Su caso requiere un saneamiento de titulación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="herramientas-ia" class="section-card">
+            <h2 class="text-3xl font-bold text-center text-purple-900 mb-2">Herramientas con IA ✨</h2>
+            <p class="text-center text-gray-600 mb-10">Acelere su proceso con la ayuda de la inteligencia artificial. Complete los campos y genere borradores de documentos clave. Recuerde que estos son borradores y deben ser revisados por un abogado.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div class="border p-6 rounded-lg bg-gray-50">
+                    <h3 class="text-2xl font-semibold text-purple-800 mb-4">1. Generador de Declaración de Testigo</h3>
+                    <div class="space-y-4">
+                        <input id="witness-possessor-name" type="text" placeholder="Su nombre completo (poseedor)" class="w-full p-2 border rounded">
+                        <input id="witness-neighbor-name" type="text" placeholder="Nombre completo de su vecino (testigo)" class="w-full p-2 border rounded">
+                        <input id="witness-years" type="number" placeholder="Años de posesión que el testigo conoce" class="w-full p-2 border rounded">
+                        <button id="generate-witness-statement" class="w-full bg-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700 transition duration-300 flex items-center justify-center">
+                            ✨ Generar Borrador de Declaración
+                        </button>
+                        <div id="witness-statement-loader" class="hidden mx-auto loader"></div>
+                        <div class="relative">
+                            <pre id="witness-output" class="gemini-output text-sm"></pre>
+                            <button id="copy-witness" title="Copiar texto" class="absolute top-2 right-2 bg-gray-200 text-gray-700 px-2 py-1 text-xs rounded hover:bg-gray-300 hidden">Copiar</button>
+                            <button id="export-witness" title="Exportar a .doc" class="absolute top-2 right-12 bg-gray-200 text-gray-700 px-2 py-1 text-xs rounded hover:bg-gray-300 hidden">📄</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border p-6 rounded-lg bg-gray-50">
+                    <h3 class="text-2xl font-semibold text-purple-800 mb-4">2. Generador de Derecho de Petición</h3>
+                    <div class="space-y-4">
+                        <input id="petition-applicant-name" type="text" placeholder="Su nombre completo (solicitante)" class="w-full p-2 border rounded">
+                        <input id="petition-applicant-id" type="text" placeholder="Su número de cédula" class="w-full p-2 border rounded">
+                        <input id="petition-address" type="text" placeholder="Dirección completa del inmueble" class="w-full p-2 border rounded">
+                        <button id="generate-petition" class="w-full bg-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700 transition duration-300 flex items-center justify-center">
+                            ✨ Generar Borrador de Petición
+                        </button>
+                        <div id="petition-loader" class="hidden mx-auto loader"></div>
+                        <div class="relative">
+                           <pre id="petition-output" class="gemini-output text-sm"></pre>
+                           <button id="copy-petition" title="Copiar texto" class="absolute top-2 right-2 bg-gray-200 text-gray-700 px-2 py-1 text-xs rounded hover:bg-gray-300 hidden">Copiar</button>
+                           <button id="export-petition" title="Exportar a .doc" class="absolute top-2 right-12 bg-gray-200 text-gray-700 px-2 py-1 text-xs rounded hover:bg-gray-300 hidden">📄</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plan" class="section-card">
+            <h2 class="text-3xl font-bold text-center text-purple-900 mb-2">Mi Plan de Acción</h2>
+            <p class="text-center text-gray-600 mb-10">Use esta lista de verificación interactiva para organizar sus próximos pasos. Marque las tareas a medida que las complete.</p>
+            <div class="space-y-4 max-w-2xl mx-auto">
+                <label class="flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                    <input type="checkbox" class="h-6 w-6 rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+                    <span class="ml-4 text-lg text-gray-800">Organizar todos los documentos existentes (recibos, contratos, etc.).</span>
+                </label>
+                <label class="flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                    <input type="checkbox" class="h-6 w-6 rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+                    <span class="ml-4 text-lg text-gray-800">Elaborar una lista de vecinos que puedan testificar mi posesión.</span>
+                </label>
+                <label class="flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                    <input type="checkbox" class="h-6 w-6 rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+                    <span class="ml-4 text-lg text-gray-800">Solicitar una consulta en la Oficina de Registro de Instrumentos Públicos.</span>
+                </label>
+                 <label class="flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                    <input type="checkbox" class="h-6 w-6 rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+                    <span class="ml-4 text-lg text-gray-800">Consultar con al menos dos abogados especializados en derecho inmobiliario.</span>
+                </label>
+                 <label class="flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                    <input type="checkbox" class="h-6 w-6 rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+                    <span class="ml-4 text-lg text-gray-800">Solicitar un presupuesto para el proceso judicial de pertenencia.</span>
+                </label>
+            </div>
+        </section>
+
+    </main>
+    
+    <div id="toast" class="fixed bottom-5 right-5 bg-green-500 text-white py-2 px-4 rounded-lg shadow-lg opacity-0 transition-opacity duration-300">Copiado al portapapeles</div>
+
+
+    <footer class="bg-white border-t mt-12">
+        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <p>&copy; 2024 Guía para Legalizar su Inmueble. Todos los derechos reservados.</p>
+            <p class="text-sm mt-2"><strong>Descargo de responsabilidad:</strong> Esta es una guía informativa y no constituye asesoría legal. Cada caso es único y debe ser consultado con un abogado profesional.</p>
+        </div>
+    </footer>
+<script src="./script.js"></script>
+</body>
+</html
